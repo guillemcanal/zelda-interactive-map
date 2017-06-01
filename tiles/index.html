@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+            <title>BigMap.tif</title>
+
+            <!-- Leaflet -->
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+            <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+            <script src="leaflet.ajax.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <style>
+                body { margin:0; padding:0; }
+                body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet MS", "Ubuntu", Serif; font-size: 11pt; }
+                #map { position:absolute; top:0; bottom:0; width:100%; } /* full size */
+                .ctl {
+                    padding: 2px 10px 2px 10px;
+                    background: white;
+                    background: rgba(255,255,255,0.9);
+                    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                    border-radius: 5px;
+                    text-align: right;
+                }
+                .title {
+                    font-size: 18pt;
+                    font-weight: bold;
+                }
+                .src {
+                    font-size: 10pt;
+                }
+
+            </style>
+
+        </head>
+        <body>
+
+        <div id="map"></div>
+
+        <script>
+
+        var osm = L.tileLayer(
+            'http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
+            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}
+        );
+
+        var zeldaMap = L.tileLayer(
+            './{z}/{x}/{y}.png', 
+            { tms: true, attribution : 'Nintendo' }
+        );
+
+        // Map
+        var map = L.map('map', {
+            center: [48.8501257431, 2.35703148226],
+            zoom: 18,
+            minZoom: 11,
+            maxZoom: 18,
+            layers: [osm]
+        });
+
+        var regionsLayer = new L.GeoJSON.AJAX("regions.geojson");
+
+        var baseMaps = {
+            "OpenStreetMap": osm
+        }
+
+        var overlayMaps = {
+            "Hyrule": zeldaMap,
+            "Régions" : regionsLayer
+        }
+
+
+        // Custom Icons
+        var myIcon = L.divIcon({ 
+            className: 'zelda-marker',
+            iconSize: new L.Point(50, 50), 
+            html: '<i class="fa fa-address-card-o" aria-hidden="true"></i>'
+        });
+
+        L.marker([48.8075764862, 2.43459296452], {icon: myIcon}).addTo(map)
+
+        // Add base layers
+        L.control.layers(baseMaps, overlayMaps, {collapsed: false}).addTo(map);
+
+        // Fit to overlay bounds (SW and NE points with (lat, lon))
+        map.fitBounds([[48.8075764862, 2.43459296452], [48.892675, 2.27947]]);
+
+        </script>
+
+        </body>
+        </html>
+
+        

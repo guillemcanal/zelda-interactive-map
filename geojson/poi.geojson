@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "type": "poi", "category": "enemy-camp", "name": "Camp ennemie", "data": null }, "geometry": { "type": "Point", "coordinates": [ 2.33850614667409, 48.836372062928653 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "treasure-chest", "name": "Coffre", "data": { "contains": "Flêches de feu x5", "buried": false } }, "geometry": { "type": "Point", "coordinates": [ 2.338365257738116, 48.836368198980843 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "poi", "name": "Feu de camp", "data": null }, "geometry": { "type": "Point", "coordinates": [ 2.339181239492297, 48.836333423437097 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "treasure-chest", "name": "Coffre", "data": { "contains": "Flêches x10", "buried": false } }, "geometry": { "type": "Point", "coordinates": [ 2.340672314064683, 48.836824142765614 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "treasure-chest", "name": "Coffre", "data": { "contains": "Opal", "buried": false } }, "geometry": { "type": "Point", "coordinates": [ 2.341507100646802, 48.836240429707608 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "goddess-statue", "name": "Statue de déesse", "data": null }, "geometry": { "type": "Point", "coordinates": [ 2.346384837774221, 48.83282629139287 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "shrine-of-trials", "name": "Ja Baij", "data": null }, "geometry": { "type": "Point", "coordinates": [ 2.351222921252857, 48.833189847407141 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "sheikah-tower", "name": "Great Plateau Tower", "data": null }, "geometry": { "type": "Point", "coordinates": [ 2.349810341171962, 48.835693482836021 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "shrine-of-trials", "name": "Owa Daim", "data": null }, "geometry": { "type": "Point", "coordinates": [ 2.345081207873913, 48.83036801610011 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "shrine-of-trials", "name": "Keh Namut", "data": null }, "geometry": { "type": "Point", "coordinates": [ 2.338480569489437, 48.833201717926528 ] } },
+{ "type": "Feature", "properties": { "type": "poi", "category": "shrine-of-trials", "name": "Oman Au", "data": null }, "geometry": { "type": "Point", "coordinates": [ 2.348338977575113, 48.837253710734764 ] } }
+]
+}
